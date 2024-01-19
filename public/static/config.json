@@ -1,0 +1,15 @@
+{
+    "version": "1.0.0",
+    "lasttime": "2024-01-19 11:00:39",
+    "author": "晚风",
+    "className": "Demo",
+    "module": [
+        {
+            "classId": "idm.component.Demo.text",
+            "comName": "文本",
+            "className": "IText",
+            "comType": "common",
+            "comLangue": "vue"
+        }
+    ]
+}
