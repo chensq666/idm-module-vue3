@@ -1,7 +1,7 @@
 import { createApp, defineAsyncComponent, getCurrentInstance, inject, onMounted, reactive } from 'vue'
 import { setUpSvgComponent } from './svgIcon/index'
 
-const componentCodeSource = import.meta.glob('./components/*.vue')
+const componentCodeSource = import.meta.glob('./idmComponents/*.vue')
 const regComponents = ({ module, version }) => {
     module.forEach((item) => {
         const key = item.classId + '@' + version
@@ -10,7 +10,7 @@ const regComponents = ({ module, version }) => {
             if (item.innerAttr) moduleObject.innerAttr = item.innerAttr
             if (item.innerComName) moduleObject.innerComName = item.innerComName
             const CurrentComponent = defineAsyncComponent({
-                loader: componentCodeSource['./components/' + item.className + '.vue'],
+                loader: componentCodeSource['./idmComponents/' + item.className + '.vue'],
                 delay: 0 // 200ms
             })
             const app = createApp({
