@@ -1,4 +1,5 @@
 import { createApp, defineAsyncComponent, getCurrentInstance, inject, onMounted, reactive } from 'vue'
+import config from '../public/static/config.json'
 import { setUpSvgComponent } from './svgIcon/index'
 
 const componentCodeSource = import.meta.glob('./idmComponents/*.vue')
@@ -64,7 +65,7 @@ const renderElement = ({ module, version }) => {
     }, 100)
 }
 
-export const useSetupApp = (config) => {
+export const useSetupApp = () => {
     regComponents(config)
     renderElement(config)
 }
