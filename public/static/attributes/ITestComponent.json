@@ -1,0 +1,39 @@
+{
+  "classId": "idm.component.Demo.itestcomponent",
+  "comName": "测试组件",
+  "className": "ITestComponent",
+  "comType": "common",
+  "comLangue": "vue",
+  "compositeAttr": [
+    {
+      "type": "input",
+      "layoutType": "inline",
+      "text": "唯一标识",
+      "bindKey": "ctrlId",
+      "disabled": true,
+      "default": "@[packageid]",
+      "desc": "",
+      "helpUrl": ""
+    },
+    {
+      "type": "group",
+      "text": "基本属性",
+      "desc": "提供设置组件能达到展示效果的基本属性设置信息",
+      "children": [
+        {
+          "type": "textarea",
+          "layoutType": "inline",
+          "text": "文本内容",
+          "bindKey": "title",
+          "default": "文本内容"
+        },
+        {
+          "type": "box",
+          "layoutType": "block",
+          "text": "内外边距",
+          "bindKey": "ulbox"
+        }
+      ]
+    }
+  ]
+}

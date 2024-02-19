@@ -106,7 +106,7 @@
               }
               var ele=document.createElement("style");
               ele.setAttribute("from",id);
-              ele.innerHTML=id.indexOf(".")==0?"":"#"+id+style;
+              ele.innerHTML=id.indexOf(".")==0?"":"#"+id+`{${style}}`;
               document.getElementsByTagName('head')[0].appendChild(ele)
             },
             /**

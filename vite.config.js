@@ -2,6 +2,7 @@ import { fileURLToPath, URL } from 'node:url'
 import { defineConfig } from 'vite'
 
 import { createSvgIconsPlugin } from 'vite-plugin-svg-icons'
+import checker from 'vite-plugin-checker'
 import vue from '@vitejs/plugin-vue'
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import path from 'path'
@@ -10,6 +11,9 @@ const isDev = process.env.NODE_ENV === 'development'
 // https://vitejs.dev/config/
 export default defineConfig({
     plugins: [
+        checker({
+            typescript: true
+        }),
         vue(),
         vueJsx(),
         createSvgIconsPlugin({
@@ -47,5 +51,16 @@ export default defineConfig({
         alias: {
             '@': fileURLToPath(new URL('./src', import.meta.url))
         }
+    },
+    server: {
+        proxy: {
+            '/DreamWeb': {
+              target: 'http://192.168.9.251:9090',
+              changeOrigin: true,
+              pathRewrite: {
+                '^DreamWeb/': 'DreamWeb/'
+              }
+            }
+          }
     }
 })

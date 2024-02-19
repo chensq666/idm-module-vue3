@@ -10,6 +10,13 @@
             "className": "IText",
             "comType": "common",
             "comLangue": "vue"
+        },
+        {
+            "classId": "idm.component.Demo.itestcomponent",
+            "comName": "测试组件",
+            "className": "ITestComponent",
+            "comType": "common",
+            "comLangue": "vue"
         }
     ]
 }
